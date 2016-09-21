@@ -1,0 +1,4 @@
+fos_rest : 
+  type: rest
+  resource:     "StatusBundle:Status"
+  name_prefix:  api_

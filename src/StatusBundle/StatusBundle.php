@@ -1,9 +1,9 @@
 <?php
 
-namespace AppBundle;
+namespace StatusBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AppBundle extends Bundle
+class StatusBundle extends Bundle
 {
 }

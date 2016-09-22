@@ -5,28 +5,30 @@ namespace StatusBundle\Controller;
 use FOS\RestBundle\Controller\FOSRestController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use FOS\RestBundle\FOSRestBundle as Rest;
+use FOS\RestBundle\Controller\Annotations;
+use FOS\RestBundle\Controller\Annotations\Get;
+use StatusBundle\Entity\Status;
+use JMS\Serializer\SerializationContext;
 
 class RestController extends FOSRestController
 {
     /**
      * @author Leonardo Rotundo <leonardorotundo@gmail.com>
-     * @Route("/status",name="status")
+     * @Get("/api/status.{_format}", name="status_rest", options={ "method_prefix" = false })
+     * @Annotations\View()
      */
     public function getStatusAction(){
-        
-       $data = $this->getDoctrine();
-       $data->getRepository("StatusBundle:Status")->findAll();
-       $container = $this->container;
-       $serializer = $container->get('jms_serializer');
-$datos = $serializer->serialize($data, 'json');
-var_dump($datos);die;
-//$data = $serializer->deserialize($inputStr, $typeName, $format);
-       
-       $view = $this->view($datos,200)
+       $object = $this->get('status.manager');
+
+       $serializer = $this->get('jms_serializer');
+       $data = $serializer->serialize($object,'json');
+
+       $view = $this->view($data, 200)
             ->setTemplate("StatusBundle:Rest:getStatus.html.twig")
             ->setTemplateVar('status');
-       
-    return array("hello"=>"World");
-        
+
+        return $this->handleView($view);
     }
+    
+    
 }

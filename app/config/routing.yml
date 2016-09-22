@@ -1,5 +1,4 @@
 status:
     resource: "@StatusBundle/Controller/"
-    type:     rest
     prefix:   /
     

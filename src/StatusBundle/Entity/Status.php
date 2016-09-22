@@ -35,14 +35,14 @@ class Status
 
     /**
      * @var string
-     *
+     * @Serializer\Expose
      * @ORM\Column(name="status", type="string", length=255)
      */
     private $status;
 
     /**
      * @var DateTime
-     *
+     * @Serializer\Expose
      * @ORM\Column(name="created_at", type="datetime", nullable=true)
      */
     private $createdAt;

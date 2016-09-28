@@ -15,8 +15,11 @@ https://getcomposer.org/download/
 Now you have to clone the repository in your project folder.
 
 cd projects/
+
 git clone git@github.com:leonardorotundo/intrawayApi.git
+
 cd intrawayApi/
+
 composer install
 
 Now we going to settings of framework symfony.

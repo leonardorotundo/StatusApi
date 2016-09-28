@@ -4,6 +4,7 @@ namespace StatusBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Status
@@ -11,10 +12,12 @@ use JMS\Serializer\Annotation as Serializer;
  * @ORM\Table(name="status")
  * @ORM\Entity(repositoryClass="StatusBundle\Repository\StatusRepository")
  * @Serializer\ExclusionPolicy("all")
+ * @ORM\HasLifecycleCallbacks()
+ * 
  */
 class Status
 {
-
+    
     /**
      * @var int
      *
@@ -30,12 +33,21 @@ class Status
      *
      * @ORM\Column(name="email", type="string", length=255, nullable=true)
      * @Serializer\Expose
+     * @Assert\Email(
+     *     message = "The email '{{ value }}' is not a valid email."
+     *     
+     * )
      */
     private $email;
 
     /**
      * @var string
      * @Serializer\Expose
+     * @Assert\NotBlank()
+     * @Assert\Length(
+     *      max = 120,
+     *      maxMessage = "Your status cannot be longer than {{ limit }} characters"
+     * )
      * @ORM\Column(name="status", type="string", length=255)
      */
     private $status;
@@ -46,7 +58,13 @@ class Status
      * @ORM\Column(name="created_at", type="datetime", nullable=true)
      */
     private $createdAt;
-
+    
+    /**
+     * @var string
+     * @ORM\Column(name="code", type="string", length=255)
+     */
+    private $code;
+    
     /**
      * Get id
      *
@@ -109,12 +127,14 @@ class Status
      * Set createdAt
      *
      * @param DateTime $createdAt
+     * @ORM\PrePersist
      *
      * @return Status
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt()
     {
-        $this->createdAt = $createdAt;
+        $datetime = new \DateTime();
+        $this->createdAt = $datetime;
 
         return $this;
     }
@@ -128,5 +148,23 @@ class Status
     {
         return $this->createdAt;
     }
+
+    /**
+     * Get Code
+     * @return type
+     */
+    function getCode() {
+        return $this->code;
+    }
+
+    /**
+     * 
+     * @param type $code
+     * @ORM\PrePersist
+     */
+    function setCode($code) {
+        $this->code = rand(1, 100000000);
+    }
+    
 }
 

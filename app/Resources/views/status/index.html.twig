@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Status list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Createdat</th>
+                <th>Code</th>
+                <th>Publish</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for status in statuses %}
+            <tr>
+                <td><a href="{{ path('api_status_show', { 'id': status.id }) }}">{{ status.id }}</a></td>
+                <td>{{ status.email }}</td>
+                <td>{{ status.status }}</td>
+                <td>{% if status.createdAt %}{{ status.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ status.code }}</td>
+                <td>{% if status.publish %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('api_status_show', { 'id': status.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('api_status_edit', { 'id': status.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('api_status_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

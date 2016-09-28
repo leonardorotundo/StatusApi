@@ -69,3 +69,12 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+
+nelmio_api_doc: ~
+
+fos_rest:
+    format_listener:
+        rules:
+            - { path: ^/api/, priorities: ['json'], prefer_extension: false }
+

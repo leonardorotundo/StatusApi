@@ -1,0 +1,4 @@
+
+index:
+    path:     /index
+    defaults: { _controller: StatusBundle:Prueba:index }

@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Status</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ status.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ status.email }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ status.status }}</td>
+            </tr>
+            <tr>
+                <th>Createdat</th>
+                <td>{% if status.createdAt %}{{ status.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Code</th>
+                <td>{{ status.code }}</td>
+            </tr>
+            <tr>
+                <th>Publish</th>
+                <td>{% if status.publish %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('api_status_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('api_status_edit', { 'id': status.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

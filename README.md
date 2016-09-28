@@ -1,10 +1,8 @@
 ### Table of contents
 
-You can insert a table of contents using the marker `[TOC]`:
-
 [TOC]
 
-Status API
+###Status API
 ===================
 
 
@@ -12,7 +10,7 @@ This is a ApiRest create in SymFony Framework version 3.1.4, you can publish a s
 
 ----------
 
-Instalation
+###Instalation
 -------------
 
 First you must have composer already install, if you haven't this is the official page of composer for install.
@@ -92,4 +90,5 @@ umask(0002); // This will let the permissions be 0775
 
 umask(0000); // This will let the permissions be 0777
 Changing the umask is not thread-safe, so the ACL methods are recommended when they are available.
+
 

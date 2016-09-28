@@ -2,7 +2,7 @@
 
 [TOC]
 
-###Status API
+### Status API
 ===================
 
 
@@ -10,7 +10,7 @@ This is a ApiRest create in SymFony Framework version 3.1.4, you can publish a s
 
 ----------
 
-###Instalation
+### Instalation
 -------------
 
 First you must have composer already install, if you haven't this is the official page of composer for install.

@@ -5,6 +5,7 @@ namespace StatusBundle\Controller;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations\Get;
 use FOS\RestBundle\Controller\Annotations\Post;
+use FOS\RestBundle\Controller\Annotations\Delete;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use StatusBundle\Form\StatusType;
 
@@ -122,7 +123,7 @@ class RestController extends FOSRestController
     /**
      * 
      * @param type $code
-     * @Get("/api/status/confirmation/{code}", name="status_rest_confirmation")
+     * @DELETE("/api/status/confirmation/{code}", name="status_rest_confirmation")
      * * @ApiDoc(
      *  resource=true,
      *  description="Confirm a code and Delete a status",

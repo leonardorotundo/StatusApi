@@ -1,3 +1,9 @@
+### Table of contents
+
+You can insert a table of contents using the marker `[TOC]`:
+
+[TOC]
+
 Status API
 ===================
 
@@ -40,6 +46,8 @@ Now we going to see the requirements of symfony:
 In the terminal put php bin/symfony_requirements and follow the instructions.
 
 Now in the for see documentation of the Api you can see this http://localhost/intrawayApi/web/app_dev.php/api/doc
+
+
 
 Now you can use the StatusApi, enjoy it!
 

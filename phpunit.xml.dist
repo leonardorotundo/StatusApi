@@ -21,6 +21,7 @@
     <filter>
         <whitelist>
             <directory>src</directory>
+            <file>tests/AppBundle/Controller/DefaultControllerTest.php</file>
             <exclude>
                 <directory>src/*Bundle/Resources</directory>
                 <directory>src/*/*Bundle/Resources</directory>

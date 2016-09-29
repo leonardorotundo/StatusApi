@@ -65,6 +65,11 @@ In the terminal write phpunit tests/StatusBundle its all!
 
 Now you can use the StatusApi, enjoy it!
 
+----------
+
+### Miscellaneous
+-------------
+
 One important Symfony requirement is that the var directory must be writable both by the web server and the command line user.
 
 On Linux and macOS systems, if your web server user is different from your command line user, you need to configure permissions properly to avoid issues. There are several ways to achieve that:

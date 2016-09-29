@@ -1,7 +1,5 @@
 ### Table of contents
 
-[TOC]
-
 ### Status API
 ===================
 

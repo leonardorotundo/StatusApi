@@ -45,7 +45,23 @@ In the terminal put php bin/symfony_requirements and follow the instructions.
 
 Now in the for see documentation of the Api you can see this http://localhost/intrawayApi/web/app_dev.php/api/doc
 
+----------
 
+### Usage
+-------------
+
+
+
+curl -X "DELETE" -H "Content-type:\ application/x-www-form-urlencoded" localhost/intrawayApi/web/app_dev.php/confirmation/code.json
+
+----------
+
+### Testing StatusApisRest
+-------------
+
+You must have phpunit installed
+
+In the terminal write phpunit tests/StatusBundle its all!
 
 Now you can use the StatusApi, enjoy it!
 

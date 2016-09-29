@@ -36,15 +36,15 @@ mailer_user: your_gmail (THIS IS JUST FOR TEST)
 
 mailer_password: your_password
 
-Now you have to create the database. Open an terminal and put this in your intrawayApi folder project.
+Now you have to create the database. Open a terminal and put this in your intrawayApi project folder.
 
 php bin/console doctrine:database:create
 
-Now we going to see the requirements of symfony:
+Now we are going to see the symfony's  requirements:
 
 In the terminal put php bin/symfony_requirements and follow the instructions.
 
-Now in the for see documentation of the Api you can see this http://localhost/intrawayApi/web/app_dev.php/api/doc
+Now, you can see the API documentation in the following link http://localhost/intrawayApi/web/app_dev.php/api/doc
 
 ----------
 

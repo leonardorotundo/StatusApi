@@ -8,7 +8,7 @@ This is a ApiRest create in SymFony Framework version 3.1.4, you can publish a s
 
 ----------
 
-### Instalation
+### Installation
 -------------
 
 First you must have composer already install, if you haven't this is the official page of composer for install.
@@ -24,16 +24,19 @@ cd intrawayApi/
 
 composer install
 
-Now we going to settings of framework symfony.
+Now we are going to settings of framework symfony.
 
-In the file <i class="icon-file"></i> app/config/parameters.yml you have to set the database_user, database_password and your account gmail for send email.
+In the file <i class="icon-file"></i> app/config/parameters.yml you have to set the database_user, database_password and your gmail account for send email.
 Example:
 mailer_transport: gmail
+
 mailer_host: smtp.gmail.com
+
 mailer_user: your_gmail (THIS IS JUST FOR TEST)
+
 mailer_password: your_password
 
-Now you have to create database. Open an terminal and put this in your intrawayApi folder project.
+Now you have to create the database. Open an terminal and put this in your intrawayApi folder project.
 
 php bin/console doctrine:database:create
 

@@ -33,7 +33,7 @@ class StatusControllerTest extends WebTestCase
     public function testStatusDelete()
     {
         $client = static::createClient();
-        $crawler = $client->request('POST', '/delete/18');
+        $crawler = $client->request('POST', '/delete/1');
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         
     }
